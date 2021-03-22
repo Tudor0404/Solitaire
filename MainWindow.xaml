@@ -27,14 +27,14 @@
         </Grid.RowDefinitions>
 
         <!-- Main Canvas -->
-        <materialDesign:Card Padding="8" Margin="16" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
+        <materialDesign:Card Padding="8" Margin="16" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="#058305">
             <Canvas x:Name="main_canvas" Margin="0">
 
             </Canvas>
         </materialDesign:Card>
 
         <!-- Stats -->
-        <materialDesign:Card Padding="8" Margin="16" Grid.Column="1" Grid.Row="0">
+        <materialDesign:Card Padding="8" Margin="16" Grid.Column="1" Grid.Row="0" Background="#d3d3d3">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -60,7 +60,7 @@
         </materialDesign:Card>
 
         <!-- Game options -->
-        <materialDesign:Card Padding="8" Margin="16" Grid.Column="1" Grid.Row="1">
+        <materialDesign:Card Padding="8" Margin="16" Grid.Column="1" Grid.Row="1" Background="#d3d3d3">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
