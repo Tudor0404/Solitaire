@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Solitaire"
         mc:Ignorable="d"
         Title="Solitaire" MinHeight="700" MinWidth="1000" ResizeMode="NoResize"
-        
+
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -17,19 +17,18 @@
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <!-- Main Canvas -->
-        <materialDesign:Card Padding="8" Margin="16" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="#058305">
-            <Canvas x:Name="main_canvas" Margin="0">
-
+        <materialDesign:Card Padding="8, 16, 8, 16" Margin="16" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="#045704">
+            <Canvas x:Name="main_canvas">
             </Canvas>
         </materialDesign:Card>
 
@@ -37,25 +36,22 @@
         <materialDesign:Card Padding="8" Margin="16" Grid.Column="1" Grid.Row="0" Background="#d3d3d3">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
                 </Grid.RowDefinitions>
-                <TextBlock x:Name="timer_text" Style="{DynamicResource MaterialDesignHeadline4TextBlock}" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">00:00:00</TextBlock>
+                <TextBlock x:Name="timer_text" Style="{DynamicResource MaterialDesignHeadline4TextBlock}" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="00:00" />
 
-                <Separator Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Separator Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
 
-                <TextBlock Style="{DynamicResource MaterialDesignHeadline5TextBlock}" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Row="2" Grid.Column="0" Margin="0,5,0,0">Moves</TextBlock>
-                <TextBlock Style="{DynamicResource MaterialDesignHeadline5TextBlock}" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1" Margin="0,5,0,0">0</TextBlock>
-
-                <TextBlock Style="{DynamicResource MaterialDesignHeadline5TextBlock}" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Row="3" Grid.Column="0" Margin="0,5,0,0">Score</TextBlock>
-                <TextBlock Style="{DynamicResource MaterialDesignHeadline5TextBlock}" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1" Margin="0,5,0,0">0</TextBlock>
+                <TextBlock Style="{DynamicResource MaterialDesignHeadline5TextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0" Margin="0,5,0,0">Moves</TextBlock>
+                <TextBlock Style="{DynamicResource MaterialDesignHeadline5TextBlock}" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1" Margin="0,5,0,0" x:Name="moves_text">0</TextBlock>
             </Grid>
         </materialDesign:Card>
 
@@ -63,45 +59,42 @@
         <materialDesign:Card Padding="8" Margin="16" Grid.Column="1" Grid.Row="1" Background="#d3d3d3">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
                     <!-- Top Solitaire Text -->
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
                     <!-- Seperator -->
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
                     <!-- Difficulty -->
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
                     <!-- Start -->
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
                 <TextBlock Style="{DynamicResource MaterialDesignHeadline5TextBlock}" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0" Margin="4">Solitaire</TextBlock>
 
-                <Separator Grid.Row="1" Grid.Column="0" Margin="0,4,0,4"/>
+                <Separator Grid.Row="1" Grid.Column="0" Margin="0,4,0,4" />
 
                 <Grid Grid.Row="2" Grid.Column="0" Margin="0,8,0,0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
 
                     <TextBlock Style="{DynamicResource MaterialDesignBody2TextBlock}" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0" Margin="4" VerticalAlignment="Center">Select game type:</TextBlock>
 
                     <ComboBox Style="{DynamicResource MaterialDesignComboBox}" Grid.Column="1" Grid.Row="0" x:Name="gameType_comboBox" Margin="4" VerticalAlignment="Center">
                     </ComboBox>
-
                 </Grid>
 
                 <Button x:Name="startButton" Style="{DynamicResource MaterialDesignRaisedDarkButton}" Width="Auto" Grid.Column="0" Grid.Row="3" VerticalAlignment="Top" Margin="0,16,0,0" Click="startButton_Click">Start</Button>
-
             </Grid>
         </materialDesign:Card>
-
     </Grid>
 </Window>
