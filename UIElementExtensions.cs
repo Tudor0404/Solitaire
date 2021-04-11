@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Windows;
 
-/*
- * Issues:
- * If game starts with draw deck, cant deal cards - fix by creating a separate deck to deal from then adding the rest onto the draw stack
- *
- */
-
 namespace Solitaire {
 
     public static class UIElementExtensions {
